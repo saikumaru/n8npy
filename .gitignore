@@ -1,0 +1,7 @@
+.venv/
+source/spam_model.pkl
+source/SMSSpamCollection
+app.tar.gz
+readme
+__pycache__/
+*.pyc
