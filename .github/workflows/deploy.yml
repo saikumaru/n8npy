@@ -24,7 +24,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/n8nwpython:latest
+          tags: ghcr.io/${{ github.actor }}/n8nwpython:latest
 
       - name: Deploy to CapRover
         uses: caprover/deploy-from-github@v1.1.2
@@ -32,4 +32,4 @@ jobs:
           server: ${{ secrets.CAPROVER_SERVER }}
           app: ${{ secrets.CAPROVER_APP }}
           token: ${{ secrets.CAPROVER_TOKEN }}
-          image: ghcr.io/${{ github.repository_owner }}/n8nwpython:latest
+          image: ghcr.io/${{ github.actor }}/n8nwpython:latest
