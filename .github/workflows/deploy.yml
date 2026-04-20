@@ -25,6 +25,8 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.actor }}/n8nwpython:latest
+          cache-from: type=registry,ref=ghcr.io/${{ github.actor }}/n8nwpython:cache
+          cache-to: type=registry,ref=ghcr.io/${{ github.actor }}/n8nwpython:cache,mode=max
 
       - name: Deploy to CapRover
         uses: caprover/deploy-from-github@v1.1.2
