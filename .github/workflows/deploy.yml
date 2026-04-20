@@ -12,9 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -28,8 +25,6 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.actor }}/n8nwpython:latest
-          cache-from: type=registry,ref=ghcr.io/${{ github.actor }}/n8nwpython:cache
-          cache-to: type=registry,ref=ghcr.io/${{ github.actor }}/n8nwpython:cache,mode=max
 
       - name: Deploy to CapRover
         uses: caprover/deploy-from-github@v1.1.2
